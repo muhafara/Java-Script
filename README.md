@@ -1,2 +1,2 @@
 # JavaScript-Projects
-My JAva Script Projects during my course.
+My Java Script Projects during my course.
