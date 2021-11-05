@@ -1,0 +1,27 @@
+body{
+    margin: 0%;
+    background-color: black;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    border: 10px;
+    background-color: white;
+    color: black;
+    display: block;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    background-color: tomato;
+    color: yellow;
+}
+
+.text-center{
+    text-align: center;
+}
+
+p:hover{
+    background-color: brown;
+    color: chartreuse;
+}
