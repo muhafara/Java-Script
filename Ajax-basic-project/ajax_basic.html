@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang ="e">
+<head>
+<title>Ajax</title>
+<meta charset="utf-8">
+</head>
+<body>
+    <div>
+        <h2>Get Ajax</h2>
+        <div id="content">
+            <input type="button" value="Get Content" id="btn_content" onclick="getContent()">
+        </div>
+    </div>
+<script type="text/javascript">
+    //Step 1
+    var ajax = new XMLHttpRequest();
+    //step 2
+    ajax.open('GET','content.html');
+    //step 3
+    ajax.onreadystatechange = function(){
+        if(ajax.readyState = 4){
+            document.getElementById('content').innerHTML=ajax.responseText;
+        }
+    }
+    //step 4
+    function getContent(){
+    ajax.send();
+}
+</script>
+</body>
+</html>
