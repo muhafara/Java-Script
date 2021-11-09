@@ -80,3 +80,11 @@ function continue_function(){
         document.write("<br> the value of i "+ i)
     }
     }
+
+/*====================================================================================================================
+get element by class name
+==================================================================================================================*/
+function getbyclassname(){
+    var A = document.getElementsByClassName("classname");
+    A [0].innerHTML ="The text has changed";
+}
