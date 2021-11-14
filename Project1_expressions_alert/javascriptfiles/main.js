@@ -29,6 +29,14 @@ document.write()
 
 document.write(result_Of_Concatenation);
 
+/*============================================================
+Variable Assignment
+======================================================*/
+function variableAssignment(){
+    var A = "This is a string";
+    document.write(A);
+}
+
 
 
 
