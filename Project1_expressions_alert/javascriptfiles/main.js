@@ -13,7 +13,6 @@ function windows_Alert_Function(){
 /*============================================================
 String concatenation
 ======================================================*/
-
 var my_String_one = "hello, I'm";
 var my_String_two = " concatenating two string";
 var result_Of_Concatenation = my_String_one + my_String_two;
@@ -36,6 +35,34 @@ function variableAssignment(){
     var A = "This is a string";
     document.write(A);
 }
+
+
+/*============================================================
+using backslash with string to shoe special character
+======================================================*/
+function backslash(){
+    var A = "PM minister said; \"Every one should get vacinated\" before this year";
+    document.write(A);
+}
+
+/*============================================================
+Multiple Variable / varable font colour
+======================================================*/
+function multipleVar(){
+    var A = "Car", B = "Bus", C = "Motorbike", D= "Cycle";
+    B = B.fontcolor("blue");
+    document.write("One of the variable from multiple  "+B);
+}
+
+/*============================================================
+Writing an expresiion
+======================================================*/
+function writingExpression(){
+    document.write("tHE RESULT OF AN EXPRESSION IS  "+3 + 3* 3)
+}
+
+
+
 
 
 
