@@ -3,18 +3,19 @@ class Calculator {
     this.previousOperandTextElement = previousOperandTextElement
     this.currentOperandTextElement = currentOperandTextElement
     this.clear()
-  }
+  } 
 
+  //Clear function
   clear() {
     this.currentOperand = ''
     this.previousOperand = ''
     this.operation = undefined
   }
-
+  //delete function
   delete() {
     this.currentOperand = this.currentOperand.toString().slice(0, -1)
   }
-
+  
   appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return
     this.currentOperand = this.currentOperand.toString() + number.toString()
