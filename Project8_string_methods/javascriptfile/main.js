@@ -38,9 +38,18 @@ function str_Search(){
 /*=============================================================================================================
 String toString()
 =============================================================================================================*/
+function str_toString(){
+    var to_String_Var= "45848754541";
+    document.getElementById("str_toString").innerHTML = to_String_Var.toString();
+}
+
+/*=============================================================================================================
+String toPrecision()
+=============================================================================================================*/
 function str_toPrecision(){
-    var x= "115425985412.265145145";
-    document.getElementById("str_toPrecision").innerHTML = x.toPrecision(2);
+    var num = 4.78656;
+    var demo = num.toPrecision(1);
+    document.getElementById("str_toPrecision").innerHTML = demo;
 }
 
 /*=============================================================================================================
@@ -49,7 +58,7 @@ String toFixeds()
 function str_toFixed(){
     var num = 5.56789;
     var n = num.toFixed(10);
-    document.getElementById("str_toPrecision").innerHTML = n;
+    document.getElementById("str_toFixed").innerHTML = n;
 }
 
 /*=============================================================================================================
