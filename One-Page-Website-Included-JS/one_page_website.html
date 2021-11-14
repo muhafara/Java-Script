@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+	     <title>One-Page Project</title>
+		 <meta charset="utf-8">
+		 <link rel="stylesheet" href="css/one_page_website.css">
+		 <link rel="stylesheet" href="css/animation.css">
+         <link rel="stylesheet" href="css/lightbox.css">
+         <script src="JS/lightbox.js"></script>
+         <script src="JS/main.js"></script>
+	</head>
+<body>
+		<!--------NAVBAR--------------->
+		<div>
+			<div>
+				<div class="menu-container">
+					<ul>
+						<li><a href="#home">HOME</a></li>
+						<li><a href="#ourservice">SERVICES</a>
+						<li><a href="#reservation">FLIGHT RESERVATION</a></li>
+						<li><a href="#gallery">GALLERY</a></li>
+						<li><a href="#aboutus">ABOUT US</a></li>
+						</ul>
+				</div>
+			</div>
+		</div>
+		<!--------NAVBAR---END----------->
+
+		<!------------HOME------------------->
+<div id="home">
+    <div class="container">
+        <div class="text-center">
+            <span class="head-main">British Airways</span>
+        </div>
+    </div>
+</div>
+<!------------HOME END--------------->
+
+<!----------dd a functional lightbox (modal image gallery) for your images in your One-Page Website----------------------------------->
+
+<br>
+<br>
+<br>
+<h2 style="text-align:center">Lightbox</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="images/slider/normal-ing/img_lights.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/slider/normal-ing/img_mountains.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/slider/normal-ing/img_nature.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/slider/normal-ing/img_snow.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="images/slider/wider-img/img_lights_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="images/slider/wider-img/img_mountains_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="images/slider/wider-img/img_nature_wide.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="images/slider/wider-img/img_snow_wide.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="images/slider/wider-img/img_lights_wide.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider/wider-img/img_mountains_wide.jpg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider/wider-img/img_nature_wide.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/slider/wider-img/img_snow_wide.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+    </div>
+  </div>
+</div>
+
+<!---EEEEEEEEEENNNNNNNNNNNNNNNNNNNNDDDDDD-------dd a functional lightbox (modal image gallery) for your images in your One-Page Website----------------------------------->
+
+
+<!-------BRITISH AIRWAYS SERVICES---------------->
+<section id="ourservice">
+	<div class="container">
+		<h1>Our service include three classes on board.</h1>
+		<div class="flex-container">
+		            <!---------Photo-conatainer 1----------------->
+					<div class="photo-container">
+						<div class="photo">
+							<img src="images/ba-class/first-class-thumb.png" alt="thumbnill loading error">
+							<div class="photo-overlay">
+								<h3>First Class</h3>
+								<p>Make your journey more exited with entertainment and comfort.</p>
+							</div>
+						</div>
+					</div>
+					<!---------END OF PHOTOCONTAINER 1-------------------->
+
+					 <!---------Photo-conatainer 1----------------->
+					<div class="photo-container">
+						<div class="photo">
+							<img src="images/ba-class/ba-business-class.png" alt="thumbnill loading error">
+								<div class="photo-overlay">
+									<h3>Business Class</h3>
+									<p>Best for passenger travelling a lot.</p>
+						</div>
+						</div>
+					</div>
+					<!---------END OF PHOTOCONTAINER 1-------------------->
+
+						 <!---------Photo-conatainer 1----------------->
+							<div class="photo-container">
+							    <div class="photo">
+									<img src="images/ba-class/ba-economy-class.png" alt="thumbnill loading error">
+										<div class="photo-overlay">
+											<h3>Economy Class</h3>
+											<p>Wi-fi service for economy class.</p>
+								</div>
+							</div>
+						</div>
+				<!---------END OF PHOTOCONTAINER 1-------------------->
+		</div>
+	</div>
+</section>
+
+<!-------BRITISH AIRWAYS SERVICES END---------------->
+
+
+
+
+<section id="aboutus">
+	<div class="">
+		<h1>About us and Achievement of "British Airways"</h1>
+		<div>
+			<p>
+				British Airways PLC, British air transport company formed in April 1974 in the fusion of British Overseas Airways Corporation (BOAC, formed in 1939), British European Airways (BEA, formed in 1946), and their associated companies. The company, state-owned from its inception, was privatized in 1987. Its major subsidiaries include BA CityFlyer, which serves destinations in the United Kingdom and continental Europe, and OpenSkies, which flies between Paris and New York City. Headquarters are at Harmondsworth in the London borough of Hillingdon, near Heathrow Airport.
+
+The airline’s history began on March 31, 1924, when, with the award of government subsidies, four small postwar companies (Handley Page Transport Ltd., Instone Air Line Ltd., Daimler Airway, and British Marine Air Navigation Co.) merged to form Imperial Airways Ltd., one of the pioneers of intercontinental air routes. Inheriting 1,760 miles (2,830 km) of British and cross-Channel routes, Imperial Airways spanned Europe and Asia as far as India, Malaya, Hong Kong, and Australia and linked imperial territories in Africa as far as South Africa.
+Meanwhile, three other airlines (Hillman’s Airways Ltd., Spartan Air Lines Ltd., and United Airways Ltd.) had merged in 1936 to form British Airways, to handle domestic and northern European flights. In November 1938, following parliamentary investigations of alleged inefficiencies, the government decided to merge and nationalize Imperial Airways and British Airways. The result was the British Overseas Airways Corporation (BOAC), formally established in 1939. In 1946 British European Airways (BEA), formerly a division of BOAC, was split off to become a government corporation in its own right, responsible primarily for British air services in the British Isles and continental Europe.
+			</p>
+		</div>
+	</div>
+</section>
+
+
+<!------------Gallery------------------->
+<section id="gallery">
+    <div class="container">
+        <h1>Gallery</h1>
+        <div class="flex-container">
+            <!---------Photo-conatainer 1----------------->
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="images/aircraft-images/G-image-one.jpeg" alt="thumbnill loading error">
+                    <div class="photo-overlay">
+                        <h3>AIRCRAFT</h3>
+                        <p>Choose your favourite aircraft for your journey</p>
+                    </div>
+                </div>
+            </div>
+            <!---------END OF PHOTOCONTAINER 1-------------------->
+
+            <!---------Photo-conatainer 2----------------->
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="images/aircraft-images/G-image-two.jpg" alt="thumbnill loading error">
+                    <div class="photo-overlay">
+                        <h3>AIRCRAFT</h3>
+                        <p>Choose your favourite aircraft for your journey</p>
+                    </div>
+                </div>
+            </div>
+            <!---------END OF PHOTOCONTAINER 2-------------------->
+
+            <!---------Photo-conatainer 3----------------->
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="images/aircraft-images/G-image-three.jpg" alt="thumbnill loading error">
+                    <div class="photo-overlay">
+                        <h3>AIRCRAFT</h3>
+                        <p>Choose your favourite aircraft for your journey</p>
+                    </div>
+                </div>
+            </div>
+            <!---------END OF PHOTOCONTAINER 3-------------------->
+
+            <!---------Photo-conatainer 4----------------->
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="images/aircraft-images/G-image-four.jpg" alt="thumbnill loading error">
+                    <div class="photo-overlay">
+                        <h3>AIRCRAFT</h3>
+                        <p>Choose your favourite aircraft for your journey</p>
+                    </div>
+                </div>
+            </div>
+            <!---------END OF PHOTOCONTAINER 4-------------------->
+
+            <!---------Photo-conatainer 5----------------->
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="images/aircraft-images/G-image-five.jpg" alt="thumbnill loading error">
+                    <div class="photo-overlay">
+                        <h3>AIRCRAFT</h3>
+                        <p>Choose your favourite aircraft for your journey</p>
+                    </div>
+                </div>
+            </div>
+            <!---------END OF PHOTOCONTAINER 5-------------------->
+
+            <!---------Photo-conatainer 6----------------->
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="images/aircraft-images/G-image-six.jpg" alt="thumbnill loading error">
+                    <div class="photo-overlay">
+                        <h3>AIRCRAFT</h3>
+                        <p>Choose your favourite aircraft for your journey</p>
+                    </div>
+                </div>
+            </div>
+            <!---------END OF PHOTOCONTAINER 6-------------------->
+        </div>
+    </div>
+</section>
+<!------------Gallery END--------------->
+
+
+
+<!------------RSVP------Form------------->
+<section id ="reservation">
+    <div class="container">
+        <div class="heading-padding">
+            <h1 class="heading-padding">RESERVATION</h1>
+            <div class="reservation">
+                <h2><span>Book your destination with us.</span>
+                <br/>and enjoy our new service.
+                </h2>
+                <p class="rsvp-text">
+                    Please provide us with your basic contact information!
+                </p>
+                <div class="form-rsvp">
+                    <form action="" method="post">
+                        <input  class="rsvp" type="text" value="" placeholder="First Name">
+                         <input class="rsvp" type="text" value="" placeholder="Last Name">
+                         <input class="rsvp" type="text" value="" placeholder="Phone NUmber">
+                         <input class="rsvp" type="text" value="" placeholder="Address">
+                         <div class="form-spacer">
+                             <label class="terms">Terms and Conditions</label>
+                         </div>
+                         <div class="submit">
+                             <input type="submit" value="Submit">
+                         </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------RSVP END--------------->
+
+
+
+<!------------FOOTER------------------->
+<div id="footer">
+    www.theprojectBAA.com &nbsp;|&nbsp; &copy:2021
+</div>
+<!------------FOOTER END--------------->
+
+</body>
+</html>
+
+<!----------------------->
