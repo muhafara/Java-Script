@@ -1,127 +1,96 @@
-class Calculator {
-  constructor(previousOperandTextElement, currentOperandTextElement) {
-    this.previousOperandTextElement = previousOperandTextElement
-    this.currentOperandTextElement = currentOperandTextElement
-    this.clear()
-  } 
+const Calculator ={
+  Display_Value :'0',
+  First_Operand : null,
+  Wait_Second_Operand :false,
+  operator: null,
+};
 
-  //Clear function
-  clear() {
-    this.currentOperand = ''
-    this.previousOperand = ''
-    this.operation = undefined
-  }
-  //delete function
-  delete() {
-    this.currentOperand = this.currentOperand.toString().slice(0, -1)
-  }
-  
-  appendNumber(number) {
-    if (number === '.' && this.currentOperand.includes('.')) return
-    this.currentOperand = this.currentOperand.toString() + number.toString()
-  }
 
-  chooseOperation(operation) {
-    if (this.currentOperand === '') return
-    if (this.previousOperand !== '') {
-      this.compute()
-    }
-    this.operation = operation
-    this.previousOperand = this.currentOperand
-    this.currentOperand = ''
-  }
-
-  compute() {
-    let computation
-    const prev = parseFloat(this.previousOperand)
-    const current = parseFloat(this.currentOperand)
-    if (isNaN(prev) || isNaN(current)) return
-    switch (this.operation) {
-      case '+':
-        computation = prev + current
-        break
-      case '-':
-        computation = prev - current
-        break
-      case '*':
-        computation = prev * current
-        break
-      case '÷':
-        computation = prev / current
-        break
-      default:
-        return
-    }
-    this.currentOperand = computation
-    this.operation = undefined
-    this.previousOperand = ''
-  }
-
-  getDisplayNumber(number) {
-    const stringNumber = number.toString()
-    const integerDigits = parseFloat(stringNumber.split('.')[0])
-    const decimalDigits = stringNumber.split('.')[1]
-    let integerDisplay
-    if (isNaN(integerDigits)) {
-      integerDisplay = ''
-    } else {
-      integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
-    }
-    if (decimalDigits != null) {
-      return `${integerDisplay}.${decimalDigits}`
-    } else {
-      return integerDisplay
+  function Input_Digit(digit){
+    const{Display_Value, Wait_Second_Operand}=Calculator;
+    if(Wait_Second_Operand===true){
+      Calculator.Display_Value=digit;
+      Calculator.Wait_Second_Operand=false;
+    }else{
+      Calculator.Display_Value = Display_Value === '0' ? digit : Display_Value + digit;
     }
   }
 
-  updateDisplay() {
-    this.currentOperandTextElement.innerText =
-      this.getDisplayNumber(this.currentOperand)
-    if (this.operation != null) {
-      this.previousOperandTextElement.innerText =
-        `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
-    } else {
-      this.previousOperandTextElement.innerText = ''
+  function Input_Decimal(dot){
+    if(Calculator.Wait_Second_Operand === true) return;
+    if(!Calculator.Display_Value.includes(dot)){
+      Calculator.Display_Value += dot;
     }
   }
-}
 
 
-const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButton = document.querySelector('[data-equals]')
-const deleteButton = document.querySelector('[data-delete]')
-const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector('[data-previous-operand]')
-const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+  function Handle_Operator(Next_Operator){
+    const {First_Operand, Display_Value, operator} = Calculator
+    const Value_of_Input = parseFloat(Display_Value);
+    if(operator && Calculator.Wait_Second_Operand){
+      Calculator.operator = Next_Operator;
+      return;
+    }
+    if(First_Operand == null){
+      Calculator.First_Operand = Value_of_Input;
+    }else if(operator) {
+      const Value_Now = First_Operand || 0;
+      let result = Perform_Calculation[operator](Value_Now, Value_of_Input);
+      result = (result * 1).toString();
+      Calculator.Display_Value = parseFloat(result);
+      Calculator.First_Operand = parseFloat(result);
+    }
+    Calculator.Wait_Second_Operand = true;
+    Calculator.operator=Next_Operator;
+  }
 
-numberButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    calculator.appendNumber(button.innerText)
-    calculator.updateDisplay()
-  })
-})
+  const Perform_Calculation ={
+    '/' : (First_Operand , Second_Operand)=> First_Operand / Second_Operand,
+    '*' : (First_Operand , Second_Operand)=> First_Operand * Second_Operand,
+    '+' : (First_Operand , Second_Operand)=> First_Operand + Second_Operand,
+    '-' : (First_Operand , Second_Operand)=> First_Operand - Second_Operand,
+    '=' : (First_Operand , Second_Operand)=> Second_Operand,
+  };
 
-operationButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    calculator.chooseOperation(button.innerText)
-    calculator.updateDisplay()
-  })
-})
+  function Calculator_resrt(){
+    Calculator.Display_Value= '0';
+    Calculator.First_Operand = null;
+    Calculator.Wait_Second_Operand = false;
+    Calculator.operator = null;
+  }
 
-equalsButton.addEventListener('click', button => {
-  calculator.compute()
-  calculator.updateDisplay()
-})
+  function Update_Display(){
+    const display = document.querySelector('.calculator-screen');
+    display.value = Calculator.Display_Value;
+  }
 
-allClearButton.addEventListener('click', button => {
-  calculator.clear()
-  calculator.updateDisplay()
-})
+  Update_Display();
 
-deleteButton.addEventListener('click', button => {
-  calculator.delete()
-  calculator.updateDisplay()
+  const keys = document.querySelector('.calculator-keys');
+  keys.addEventListener('click', (event) => {
+    const {target} = event;
+    if(!target.matches('button')){
+      return;
+  }
+
+  if (target.classList.contains('operator')){
+    Handle_Operator(target.value);
+    Update_Display();
+    return;
+  }
+
+  if(target.classList.contains('decimal')){
+    Input_Decimal(target.value);
+    Update_Display();
+    return;
+  }
+  if(target.classList.contains('all-clear')){
+    Calculator_resrt();
+    Update_Display();
+    return;
+  }
+
+  Input_Digit(target.value);
+  Update_Display();
 })
