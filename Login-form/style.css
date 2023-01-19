@@ -1,0 +1,17 @@
+#form-div{
+    background-color: #85929E;
+    width: 350px;
+}
+#login-form{
+    width: 300px;
+    background-color: #979A9A;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    border-style: double;
+}
+#login-form-heading{
+    color: #D6EAF8;
+}
+#first-name-label, #last-name-label, #email-label{
+    color: #F0F3F4;
+}

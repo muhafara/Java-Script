@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>Login-Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "form-div">
+        <h1 align ="center" id="login-form-heading">Login Form:</h1>
+        <div align="center">
+            <form onsubmit="return formValidation()" id ="login-form">
+                <table>
+                    <tr>
+                        <td align="right"><label id="first-name-label">First Name :</label></td>
+                        <td ><input type="text" id="first-name-input" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label id ="last-name-label">Last Name :</label></td>
+                        <td ><input type="text" id = "last-name-input" onfocus="this.value=''"></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label id ="email-label">Email :</label></td>
+                        <td><input type="text" id= "email-input" onfocus="this.value=''">
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td align="left"><button onclick="" id ="login-form-button">submit</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <br>
+    </div>
+    <script src="form-validation.js"></script>
+</body>
